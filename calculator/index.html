@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calc">
+            <input type="text" placeholder="0" id="output">
+            <button onclick="Clear()">Clear</button>
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button onclick="display('+')">+</button>
+            <button onclick="display('-')">-</button>
+            <button onclick="display('/')">/</button>
+            <button onclick="display('*')">*</button>
+            
+            <button class="equal" onclick="Calculate()">=</button>
+        </div>
+    </div>
+
+    <script>
+
+        let outputDisplay = document.getElementById("output");
+        function display(num){
+            outputDisplay.value += num;
+        }
+
+        function Calculate(){
+            try {
+                outputDisplay.value = eval(outputDisplay.value)
+            } catch (err) {
+                alert("Invaild input")
+            }
+        }
+
+        function Clear(){
+            outputDisplay.value= "";
+        }
+
+
+    </script>
+</body>
+</html>
